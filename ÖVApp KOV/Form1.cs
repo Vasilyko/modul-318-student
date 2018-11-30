@@ -29,7 +29,7 @@ namespace ÖVApp_KOV
             {
                 var instance = new Transport();
                 var stations = instance.GetStations(comboBox_Abfahrtsort.Text);
-                comboBox_Abfahrtsort.DataSource = "";
+                //comboBox_Abfahrtsort.DataSource = "";
                 comboBox_Abfahrtsort.DisplayMember = "name";
                 comboBox_Abfahrtsort.DataSource = stations.StationList;
                 comboBox_Abfahrtsort.DroppedDown = true;
@@ -39,7 +39,7 @@ namespace ÖVApp_KOV
 
         private void comboBox_Abfahrtsort_TextUpdate(object sender, EventArgs e)
         {
-            UserInput();
+            //UserInput();
         }
         private void Output(string query)
         {
