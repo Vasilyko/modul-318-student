@@ -32,6 +32,16 @@ namespace SwissTransport
 
         [JsonProperty("stop")]
         public Stop Stop { get; set; }
+
+        public override string ToString()
+        {
+            return string.Format(" To: {0}, Stop: {1}",
+                
+               
+                
+                To,
+                Stop.Departure.ToLongTimeString());
+        }
     }
 
     public class Stop
