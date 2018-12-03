@@ -28,21 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBoxStationBoard = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.listBoxStationBoard = new System.Windows.Forms.ListBox();
+            this.dataGrid_Ausgabe = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Ausgabe)).BeginInit();
             this.SuspendLayout();
-            // 
-            // listBoxStationBoard
-            // 
-            this.listBoxStationBoard.FormattingEnabled = true;
-            this.listBoxStationBoard.Location = new System.Drawing.Point(0, 46);
-            this.listBoxStationBoard.Name = "listBoxStationBoard";
-            this.listBoxStationBoard.Size = new System.Drawing.Size(800, 407);
-            this.listBoxStationBoard.TabIndex = 0;
             // 
             // label1
             // 
@@ -94,11 +88,28 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Anakunftszeit:";
             // 
+            // listBoxStationBoard
+            // 
+            this.listBoxStationBoard.FormattingEnabled = true;
+            this.listBoxStationBoard.Location = new System.Drawing.Point(0, 46);
+            this.listBoxStationBoard.Name = "listBoxStationBoard";
+            this.listBoxStationBoard.Size = new System.Drawing.Size(800, 407);
+            this.listBoxStationBoard.TabIndex = 0;
+            // 
+            // dataGrid_Ausgabe
+            // 
+            this.dataGrid_Ausgabe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGrid_Ausgabe.Location = new System.Drawing.Point(0, 46);
+            this.dataGrid_Ausgabe.Name = "dataGrid_Ausgabe";
+            this.dataGrid_Ausgabe.Size = new System.Drawing.Size(800, 407);
+            this.dataGrid_Ausgabe.TabIndex = 6;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dataGrid_Ausgabe);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -107,18 +118,19 @@
             this.Controls.Add(this.listBoxStationBoard);
             this.Name = "Form2";
             this.Text = "Form2";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Ausgabe)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.ListBox listBoxStationBoard;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ListBox listBoxStationBoard;
+        private System.Windows.Forms.DataGridView dataGrid_Ausgabe;
     }
 }

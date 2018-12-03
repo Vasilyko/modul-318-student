@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using SwissTransport;
 using System.Windows.Forms;
+using System.Diagnostics;
+using System.Net.Mail;
 
 namespace ÖVApp_KOV
 {
@@ -56,8 +58,8 @@ namespace ÖVApp_KOV
                     var customStringDeparture = String.Format("{0} Uhr {1} Minuten", departure.Hour, departure.Minute);
                     var customStringArrival = String.Format("{0} Uhr {1} Minuten", arrival.Hour, arrival.Minute);
                     var customStringDuration = String.Format("{0} Minuten", int.Parse(obj2[0]) * 60 + int.Parse(obj2[1]));
-
-                    listBox_Ausgabe.Items.Add(customStringDeparture + "\t" + customStringDuration + "\t" + customStringArrival);
+                    
+                    listBox_Ausgabe.Items.Add(customStringDeparture + "               " + customStringDuration + "               " + customStringArrival);
                 }
         }
             else if (comboBox_Abfahrtsort.Text != "" && comboBox_Ankunftsort.Text == "") {
@@ -100,6 +102,35 @@ namespace ÖVApp_KOV
         {
             ComboBox Input = comboBox_Ankunftsort;
             UserInput(Input, ref stationsArrival);
+            listBox_Ausgabe.Items.Clear();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //Ist für das versenden von mails zuständig
+            //funktioniert noch nicht einwandfrei
+
+            //MailMessage message = new MailMessage();
+            ////SmtpClient smtp = new SmtpClient("192.168.0.113", 25);
+            //SmtpClient client = new SmtpClient();
+            //client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            //client.UseDefaultCredentials = false;
+            //client.Host = "smtp.gmail.com";
+
+            //message.From = new MailAddress("Vasily.kozlov.hasler@gmail.com");
+            //message.To.Add(new MailAddress("Vasily.kozlov.hasler@gmail.com"));
+            //message.Subject = "SBB Verbindungen";
+
+            //var body = string.Empty;
+
+            //foreach(var item in listBox_Ausgabe.Items)
+            //{
+            //    body += (string)item;
+            //}
+
+            //message.Body = body;
+
+            //client.Send(message);
         }
     }
 }

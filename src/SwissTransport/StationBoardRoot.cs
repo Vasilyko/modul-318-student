@@ -36,12 +36,18 @@ namespace SwissTransport
         public override string ToString()
         {
             return string.Format(" To: {0}, Stop: {1}",
-                
-               
-                
                 To,
                 Stop.Departure.ToLongTimeString());
         }
+    }
+    //
+    public class StationBoardViewModel
+    {
+        public string DeparturePoint { get; set; }
+
+        public string ArrivalPoint { get; set; }
+
+        public string DepartureTime { get; set; }
     }
 
     public class Stop

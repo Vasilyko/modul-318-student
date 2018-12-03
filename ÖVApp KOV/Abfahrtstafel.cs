@@ -25,13 +25,23 @@ namespace ÖVApp_KOV
             InitializeComponent();
             stationBoard =  transport.GetStationBoard(station.Name, station.Id);
 
+            IList<StationBoardViewModel> listArrivals = new List<StationBoardViewModel>();
+
             foreach (StationBoard arrival in stationBoard.Entries)
             {
-                listBoxStationBoard.Items.Add(station.Name + "\t" + "\t" +  arrival.To + "\t" + "\t" +arrival.Stop.Departure);
+                var stationBoardViewModel = new StationBoardViewModel();
+
+                stationBoardViewModel.DeparturePoint = station.Name;
+                stationBoardViewModel.DepartureTime = arrival.Stop.Departure.ToShortTimeString();
+                stationBoardViewModel.ArrivalPoint = arrival.To;
+
+                listArrivals.Add(stationBoardViewModel);
             }
 
-            
 
+            dataGrid_Ausgabe.DataSource = listArrivals;
+
+            //dataGrid_Ausgabe.Columns.Add()
         }
 
     }
