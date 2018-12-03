@@ -18,7 +18,7 @@ namespace ÖVApp_KOV
         private ITransport transport;
         private Stations stationsArrival;
         private Stations stationsDeparture;
-        private MailMessage message;
+
 
         public Form1()
         {
@@ -98,7 +98,7 @@ namespace ÖVApp_KOV
                 var text = input.Text;
                 var newStations = transport.GetStations(input.Text);
 
-                //sollte mehr als keine Verbindungen gefunden wurden, gibt er diese auch aus 
+                //ist für Autofill zuständig
                 if (newStations.StationList.Count > 0)
                 {
                     stations = newStations;
@@ -110,9 +110,9 @@ namespace ÖVApp_KOV
                     input.SelectionStart = text.Length;
                 }
             }
-            else { 
-            
+            else {
 
+                MessageBox.Show("Es wurde keine Station mit îhrer Eingabe gefunden");
  
                 }
         }
@@ -135,8 +135,8 @@ namespace ÖVApp_KOV
 
         private void button1_Click(object sender, EventArgs e)
         {
-           /* Ist für das versenden von mails zuständig
-            funktioniert noch nicht einwandfrei*/
+            /* Ist für das versenden von mails zuständig
+             funktioniert noch nicht einwandfrei*/
 
             MailMessage message = new MailMessage();
             //SmtpClient smtp = new SmtpClient("192.168.0.113", 25);

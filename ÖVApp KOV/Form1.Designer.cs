@@ -173,7 +173,7 @@
             // 
             // listBox_Ausgabe
             // 
-            this.listBox_Ausgabe.BackColor = System.Drawing.Color.Purple;
+            this.listBox_Ausgabe.BackColor = System.Drawing.Color.AliceBlue;
             this.listBox_Ausgabe.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox_Ausgabe.FormattingEnabled = true;
             this.listBox_Ausgabe.ItemHeight = 29;
