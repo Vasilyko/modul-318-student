@@ -42,9 +42,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(17, 16);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 25);
+            this.label1.Size = new System.Drawing.Size(74, 31);
             this.label1.TabIndex = 1;
             this.label1.Text = "Von:";
             // 
@@ -52,9 +53,10 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(727, 13);
+            this.label2.Location = new System.Drawing.Point(969, 16);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 25);
+            this.label2.Size = new System.Drawing.Size(91, 31);
             this.label2.TabIndex = 2;
             this.label2.Text = "Nach:";
             // 
@@ -62,9 +64,10 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(415, 13);
+            this.label3.Location = new System.Drawing.Point(553, 16);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(82, 25);
+            this.label3.Size = new System.Drawing.Size(102, 31);
             this.label3.TabIndex = 3;
             this.label3.Text = "Dauer:";
             // 
@@ -72,9 +75,10 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(115, 13);
+            this.label4.Location = new System.Drawing.Point(153, 16);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(145, 25);
+            this.label4.Size = new System.Drawing.Size(180, 31);
             this.label4.TabIndex = 4;
             this.label4.Text = "Abfahrtszeit:";
             // 
@@ -82,33 +86,38 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(549, 13);
+            this.label5.Location = new System.Drawing.Point(732, 16);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(162, 25);
+            this.label5.Size = new System.Drawing.Size(201, 31);
             this.label5.TabIndex = 5;
             this.label5.Text = "Anakunftszeit:";
             // 
             // listBoxStationBoard
             // 
             this.listBoxStationBoard.FormattingEnabled = true;
-            this.listBoxStationBoard.Location = new System.Drawing.Point(0, 46);
+            this.listBoxStationBoard.ItemHeight = 16;
+            this.listBoxStationBoard.Location = new System.Drawing.Point(0, 57);
+            this.listBoxStationBoard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listBoxStationBoard.Name = "listBoxStationBoard";
-            this.listBoxStationBoard.Size = new System.Drawing.Size(800, 407);
+            this.listBoxStationBoard.Size = new System.Drawing.Size(1065, 500);
             this.listBoxStationBoard.TabIndex = 0;
             // 
             // dataGrid_Ausgabe
             // 
+            this.dataGrid_Ausgabe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid_Ausgabe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_Ausgabe.Location = new System.Drawing.Point(0, 46);
+            this.dataGrid_Ausgabe.Location = new System.Drawing.Point(0, 57);
+            this.dataGrid_Ausgabe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGrid_Ausgabe.Name = "dataGrid_Ausgabe";
-            this.dataGrid_Ausgabe.Size = new System.Drawing.Size(800, 407);
+            this.dataGrid_Ausgabe.Size = new System.Drawing.Size(1067, 501);
             this.dataGrid_Ausgabe.TabIndex = 6;
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.dataGrid_Ausgabe);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -116,6 +125,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxStationBoard);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form2";
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Ausgabe)).EndInit();

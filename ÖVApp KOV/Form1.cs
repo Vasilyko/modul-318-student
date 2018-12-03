@@ -18,6 +18,7 @@ namespace ÖVApp_KOV
         private ITransport transport;
         private Stations stationsArrival;
         private Stations stationsDeparture;
+        private MailMessage message;
 
         public Form1()
         {
@@ -43,94 +44,121 @@ namespace ÖVApp_KOV
 
         private void btn_Suchen_Click(object sender, EventArgs e)
         {
-            if (comboBox_Ankunftsort.Text != "" && comboBox_Abfahrtsort.Text != "") { 
+            btn_Suchen.BackColor = Color.SkyBlue;
+            listBox_Ausgabe.Items.Clear();
 
-            Connections connections = transport.GetConnectionsWithTime(((Station)comboBox_Abfahrtsort.SelectedItem).Name, ((Station)comboBox_Ankunftsort.SelectedItem).Name, dateTimePicker1.Value);
+            //Falls Ankunftsort angegeben wurde, werden die Verbindungen angezeigt
+            if (comboBox_Ankunftsort.Text != "" && comboBox_Abfahrtsort.Text != "")
+            {
 
-            for(int i = 0; i <= 3; i++)
+                comboBox_Abfahrtsort.SelectedIndex = 0;
+                comboBox_Ankunftsort.SelectedIndex = 0;
+                Connections connections = transport.GetConnectionsWithTime(((Station)comboBox_Abfahrtsort.SelectedItem).Name, ((Station)comboBox_Ankunftsort.SelectedItem).Name, dateTimePicker1.Value);
+
+
+                //Es werden bis zu 4 verbindungen angezeigt
+                for (int i = 0; i <= 3; i++)
                 {
                     var departure = Convert.ToDateTime(connections.ConnectionList[i].From.Departure);
                     var arrival = Convert.ToDateTime(connections.ConnectionList[i].To.Arrival);
 
+                    
                     var obj = connections.ConnectionList[i].Duration.Split('d');
                     var obj2 = obj[1].Split(':');
 
+                    //sorgt für eine schönere Ausgabe beim benuzer....
                     var customStringDeparture = String.Format("{0} Uhr {1} Minuten", departure.Hour, departure.Minute);
                     var customStringArrival = String.Format("{0} Uhr {1} Minuten", arrival.Hour, arrival.Minute);
                     var customStringDuration = String.Format("{0} Minuten", int.Parse(obj2[0]) * 60 + int.Parse(obj2[1]));
-                    
+                    //...+das
                     listBox_Ausgabe.Items.Add(customStringDeparture + "               " + customStringDuration + "               " + customStringArrival);
                 }
-        }
-            else if (comboBox_Abfahrtsort.Text != "" && comboBox_Ankunftsort.Text == "") {
+            }
+            //Falls nur Abfahrtsort angegeben, sollte Abfahrttafel erscheinen
+            else if (comboBox_Abfahrtsort.Text != "" && comboBox_Ankunftsort.Text == "")
+            {
 
-               new Form2((Station)comboBox_Abfahrtsort.SelectedItem, transport).Show();
-               
+                new Form2((Station)comboBox_Abfahrtsort.SelectedItem, transport).Show();
+
 
             }
-        }
-        private void UserInput(ComboBox Input, ref Stations stations)
-        {
-            if (Input.Text != string.Empty)
+
+            else
             {
-                var text = Input.Text;
-                var newStations = transport.GetStations(Input.Text);
-                if(newStations.StationList.Count > 0)
-                {   
+                MessageBox.Show("Bitte geben Sie einen Abfahrtsort ein");
+                btn_Suchen.BackColor = Color.Red;
+            }
+        }
+        private void UserInput(ComboBox input, ref Stations stations)
+        {
+
+            if (input.Text != string.Empty)
+            {
+
+                var text = input.Text;
+                var newStations = transport.GetStations(input.Text);
+
+                //sollte mehr als keine Verbindungen gefunden wurden, gibt er diese auch aus 
+                if (newStations.StationList.Count > 0)
+                {
                     stations = newStations;
-                    Input.DataSource = newStations.StationList;
-                    Input.DroppedDown = true;
-                    Input.Text = text;
-                    Input.SelectionStart = text.Length;
+                    input.DataSource = newStations.StationList;
+                    input.DroppedDown = true;
+                    
+                    //da ich Probleme mit der Eingabe hatte, habe ich den text vom benutzer wieder in die Eingabe gesetzt 
+                    input.Text = text;
+                    input.SelectionStart = text.Length;
                 }
             }
+            else { 
+            
+
+ 
+                }
         }
 
         private void comboBox_Abfahrtsort_TextUpdate(object sender, EventArgs e)
         {
             
-            ComboBox Input = comboBox_Abfahrtsort;
-
-            UserInput(Input, ref stationsDeparture);
-        }
-        private void Output(string query)
-        {
-
-        }
+            ComboBox input = comboBox_Abfahrtsort;
+            UserInput(input, ref stationsDeparture);
+            
+            }
 
         private void comboBox_Ankunftsort_TextUpdate(object sender, EventArgs e)
         {
-            ComboBox Input = comboBox_Ankunftsort;
-            UserInput(Input, ref stationsArrival);
-            listBox_Ausgabe.Items.Clear();
+            ComboBox input = comboBox_Ankunftsort;
+            UserInput(input, ref stationsArrival);
         }
+
+     
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Ist für das versenden von mails zuständig
-            //funktioniert noch nicht einwandfrei
+           /* Ist für das versenden von mails zuständig
+            funktioniert noch nicht einwandfrei*/
 
-            //MailMessage message = new MailMessage();
-            ////SmtpClient smtp = new SmtpClient("192.168.0.113", 25);
-            //SmtpClient client = new SmtpClient();
-            //client.DeliveryMethod = SmtpDeliveryMethod.Network;
-            //client.UseDefaultCredentials = false;
-            //client.Host = "smtp.gmail.com";
+            MailMessage message = new MailMessage();
+            //SmtpClient smtp = new SmtpClient("192.168.0.113", 25);
+            SmtpClient client = new SmtpClient();
+            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.UseDefaultCredentials = false;
+            client.Host = "smtp.gmail.com";
 
-            //message.From = new MailAddress("Vasily.kozlov.hasler@gmail.com");
-            //message.To.Add(new MailAddress("Vasily.kozlov.hasler@gmail.com"));
-            //message.Subject = "SBB Verbindungen";
+            message.From = new MailAddress("Vasily.kozlov.hasler@gmail.com");
+            message.To.Add(new MailAddress("Vasily.kozlov.hasler@gmail.com"));
+            message.Subject = "SBB Verbindungen";
 
-            //var body = string.Empty;
+            var body = string.Empty;
 
-            //foreach(var item in listBox_Ausgabe.Items)
-            //{
-            //    body += (string)item;
-            //}
+            foreach (var item in listBox_Ausgabe.Items)
+            {
+                body += (string)item;
+            }
 
-            //message.Body = body;
+            message.Body = body;
 
-            //client.Send(message);
+            client.Send(message);
         }
     }
 }
