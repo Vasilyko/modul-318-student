@@ -10,6 +10,7 @@ using SwissTransport;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Net.Mail;
+using System.IO;
 
 namespace ÖVApp_KOV
 {
@@ -22,6 +23,10 @@ namespace ÖVApp_KOV
 
         public Form1()
         {
+            System.IO.Stream str = Properties.Resources.ElevatorMusic;
+            System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
+            snd.Play();
+
             InitializeComponent();
 
             dateTimePicker1.Format = DateTimePickerFormat.Time;
@@ -119,17 +124,10 @@ namespace ÖVApp_KOV
 
         private void comboBox_Abfahrtsort_TextUpdate(object sender, EventArgs e)
         {
-            //sucht den pfad für die Apspielmusik
-            System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"C:\Users\vasil\Desktop\ÜK318\Local-forecast-elevator-music\ElevatorMusic.wav");
-
-            //sp.PlayLooping();
-
-            sp.Play();
-
             ComboBox input = comboBox_Abfahrtsort;
             UserInput(input, ref stationsDeparture);
             
-            }
+        }
 
         private void comboBox_Ankunftsort_TextUpdate(object sender, EventArgs e)
         {
