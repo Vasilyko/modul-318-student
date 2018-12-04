@@ -14,14 +14,14 @@ using System.IO;
 
 namespace ÖVApp_KOV
 {
-    public partial class Form1 : Form
+    public partial class Vasily_SBB : Form
     {
         private ITransport transport;
         private Stations stationsArrival;
         private Stations stationsDeparture;
 
 
-        public Form1()
+        public Vasily_SBB()
         {
             System.IO.Stream str = Properties.Resources.merrychristmas;
             System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
@@ -83,7 +83,7 @@ namespace ÖVApp_KOV
             else if (comboBox_Abfahrtsort.Text != "" && comboBox_Ankunftsort.Text == "")
             {
 
-                new Form2((Station)comboBox_Abfahrtsort.SelectedItem, transport).Show();
+                new Vasily_Abfahrtstafel((Station)comboBox_Abfahrtsort.SelectedItem, transport).Show();
 
 
             }
@@ -176,11 +176,5 @@ namespace ÖVApp_KOV
             System.Diagnostics.Process.Start("https://databerg.rocks/de");
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            System.IO.Stream str = Properties.Resources.merrychristmas;
-            System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
-            snd.Stop();
-        }
     }
 }

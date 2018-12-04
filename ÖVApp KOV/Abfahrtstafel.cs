@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace ÖVApp_KOV
 {
-    public partial class Form2 : Form
+    public partial class Vasily_Abfahrtstafel : Form
     {
         private StationBoardRoot stationBoard;
-        public Form2()
+        public Vasily_Abfahrtstafel()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace ÖVApp_KOV
         /// </summary>
         /// <param name="station"></param>
         /// <param name="transport"></param>
-        public Form2(Station station, ITransport transport)
+        public Vasily_Abfahrtstafel(Station station, ITransport transport)
         {
             InitializeComponent();
             stationBoard =  transport.GetStationBoard(station.Name, station.Id);

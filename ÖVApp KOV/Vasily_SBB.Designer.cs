@@ -1,6 +1,6 @@
 ﻿namespace ÖVApp_KOV
 {
-    partial class Form1
+    partial class Vasily_SBB
     {
         /// <summary>
         /// Erforderliche Designervariable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Vasily_SBB));
             this.comboBox_Abfahrtsort = new System.Windows.Forms.ComboBox();
             this.comboBox_Ankunftsort = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +46,6 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button_Help = new System.Windows.Forms.Button();
             this.button_Sponoring = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox_Abfahrtsort
@@ -219,25 +218,13 @@
             this.button_Sponoring.UseVisualStyleBackColor = false;
             this.button_Sponoring.Click += new System.EventHandler(this.button_Sponoring_Click);
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Chocolate;
-            this.button1.Location = new System.Drawing.Point(270, 97);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(93, 21);
-            this.button1.TabIndex = 16;
-            this.button1.Text = "Musik anhalten";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // Form1
+            // Vasily_SBB
             // 
             this.AcceptButton = this.btn_Suchen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(641, 499);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(633, 499);
             this.Controls.Add(this.button_Sponoring);
             this.Controls.Add(this.button_Help);
             this.Controls.Add(this.button_Mail);
@@ -257,7 +244,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Vasily_SBB";
             this.Text = "Sibirische Eisenbahn";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -282,7 +269,6 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button button_Help;
         private System.Windows.Forms.Button button_Sponoring;
-        private System.Windows.Forms.Button button1;
     }
 }
 
