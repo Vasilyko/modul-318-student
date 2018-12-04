@@ -119,7 +119,12 @@ namespace ÖVApp_KOV
 
         private void comboBox_Abfahrtsort_TextUpdate(object sender, EventArgs e)
         {
-            
+            System.Media.SoundPlayer sp = new System.Media.SoundPlayer(@"C:\Users\vasil\Desktop\ÜK318\Local-forecast-elevator-music\ElevatorMusic.wav");
+
+            //sp.PlayLooping();
+
+            sp.Play();
+
             ComboBox input = comboBox_Abfahrtsort;
             UserInput(input, ref stationsDeparture);
             
@@ -159,6 +164,17 @@ namespace ÖVApp_KOV
             message.Body = body;
 
             client.Send(message);
+        }
+
+        private void button_Help_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Sie werden mit unserem Kompetentesten Mitarbeiter reden dürfen", "TopHilfe.Vasily", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk) == DialogResult.Yes)
+                System.Diagnostics.Process.Start("https://www.google.com/");
+        }
+
+        private void button_Sponoring_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://databerg.rocks/de");
         }
     }
 }

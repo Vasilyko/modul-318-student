@@ -41,9 +41,11 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_Mail = new System.Windows.Forms.Button();
             this.listBox_Ausgabe = new System.Windows.Forms.ListBox();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.button_Help = new System.Windows.Forms.Button();
+            this.button_Sponoring = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox_Abfahrtsort
@@ -51,7 +53,7 @@
             this.comboBox_Abfahrtsort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.comboBox_Abfahrtsort.FormattingEnabled = true;
             this.comboBox_Abfahrtsort.Location = new System.Drawing.Point(14, 76);
-            this.comboBox_Abfahrtsort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_Abfahrtsort.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_Abfahrtsort.Name = "comboBox_Abfahrtsort";
             this.comboBox_Abfahrtsort.Size = new System.Drawing.Size(232, 21);
             this.comboBox_Abfahrtsort.TabIndex = 0;
@@ -62,7 +64,7 @@
             this.comboBox_Ankunftsort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.comboBox_Ankunftsort.FormattingEnabled = true;
             this.comboBox_Ankunftsort.Location = new System.Drawing.Point(393, 76);
-            this.comboBox_Ankunftsort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_Ankunftsort.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_Ankunftsort.Name = "comboBox_Ankunftsort";
             this.comboBox_Ankunftsort.Size = new System.Drawing.Size(237, 21);
             this.comboBox_Ankunftsort.TabIndex = 1;
@@ -106,7 +108,7 @@
             this.btn_Suchen.BackColor = System.Drawing.Color.DarkOrange;
             this.btn_Suchen.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Suchen.Location = new System.Drawing.Point(9, 285);
-            this.btn_Suchen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Suchen.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Suchen.Name = "btn_Suchen";
             this.btn_Suchen.Size = new System.Drawing.Size(620, 167);
             this.btn_Suchen.TabIndex = 5;
@@ -118,7 +120,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.panel1.Location = new System.Drawing.Point(9, 150);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(620, 1);
             this.panel1.TabIndex = 7;
@@ -163,17 +165,17 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 12;
             // 
-            // button1
+            // button_Mail
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(14, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(616, 32);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Resultat via Mail Teilen";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_Mail.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button_Mail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Mail.Location = new System.Drawing.Point(14, 3);
+            this.button_Mail.Name = "button_Mail";
+            this.button_Mail.Size = new System.Drawing.Size(616, 32);
+            this.button_Mail.TabIndex = 13;
+            this.button_Mail.Text = "Resultat via Mail Teilen";
+            this.button_Mail.UseVisualStyleBackColor = true;
+            this.button_Mail.Click += new System.EventHandler(this.button1_Click);
             // 
             // listBox_Ausgabe
             // 
@@ -182,7 +184,7 @@
             this.listBox_Ausgabe.FormattingEnabled = true;
             this.listBox_Ausgabe.ItemHeight = 22;
             this.listBox_Ausgabe.Location = new System.Drawing.Point(9, 161);
-            this.listBox_Ausgabe.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.listBox_Ausgabe.Margin = new System.Windows.Forms.Padding(2);
             this.listBox_Ausgabe.Name = "listBox_Ausgabe";
             this.listBox_Ausgabe.Size = new System.Drawing.Size(620, 114);
             this.listBox_Ausgabe.TabIndex = 11;
@@ -193,14 +195,39 @@
             this.imageList1.ImageSize = new System.Drawing.Size(16, 16);
             this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
+            // button_Help
+            // 
+            this.button_Help.BackColor = System.Drawing.Color.HotPink;
+            this.button_Help.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Help.Location = new System.Drawing.Point(9, 457);
+            this.button_Help.Name = "button_Help";
+            this.button_Help.Size = new System.Drawing.Size(502, 40);
+            this.button_Help.TabIndex = 14;
+            this.button_Help.Text = "Bei fragen klicken Sie bitte hier drauf, Sie werden sofort eine Lösung finden";
+            this.button_Help.UseVisualStyleBackColor = false;
+            this.button_Help.Click += new System.EventHandler(this.button_Help_Click);
+            // 
+            // button_Sponoring
+            // 
+            this.button_Sponoring.BackColor = System.Drawing.Color.Red;
+            this.button_Sponoring.Location = new System.Drawing.Point(518, 457);
+            this.button_Sponoring.Name = "button_Sponoring";
+            this.button_Sponoring.Size = new System.Drawing.Size(108, 40);
+            this.button_Sponoring.TabIndex = 15;
+            this.button_Sponoring.Text = "Sponsoring";
+            this.button_Sponoring.UseVisualStyleBackColor = false;
+            this.button_Sponoring.Click += new System.EventHandler(this.button_Sponoring_Click);
+            // 
             // Form1
             // 
             this.AcceptButton = this.btn_Suchen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(638, 458);
-            this.Controls.Add(this.button1);
+            this.BackColor = System.Drawing.Color.DimGray;
+            this.ClientSize = new System.Drawing.Size(638, 499);
+            this.Controls.Add(this.button_Sponoring);
+            this.Controls.Add(this.button_Help);
+            this.Controls.Add(this.button_Mail);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.listBox_Ausgabe);
             this.Controls.Add(this.label6);
@@ -215,7 +242,7 @@
             this.Controls.Add(this.comboBox_Abfahrtsort);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Sibirische Eisenbahn";
@@ -237,9 +264,11 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_Mail;
         private System.Windows.Forms.ListBox listBox_Ausgabe;
         private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.Button button_Help;
+        private System.Windows.Forms.Button button_Sponoring;
     }
 }
 
