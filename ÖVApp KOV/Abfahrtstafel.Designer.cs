@@ -98,7 +98,7 @@
             this.listBoxStationBoard.FormattingEnabled = true;
             this.listBoxStationBoard.ItemHeight = 16;
             this.listBoxStationBoard.Location = new System.Drawing.Point(0, 57);
-            this.listBoxStationBoard.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.listBoxStationBoard.Margin = new System.Windows.Forms.Padding(4);
             this.listBoxStationBoard.Name = "listBoxStationBoard";
             this.listBoxStationBoard.Size = new System.Drawing.Size(1065, 500);
             this.listBoxStationBoard.TabIndex = 0;
@@ -107,10 +107,10 @@
             // 
             this.dataGrid_Ausgabe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGrid_Ausgabe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_Ausgabe.Location = new System.Drawing.Point(0, 57);
-            this.dataGrid_Ausgabe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGrid_Ausgabe.Location = new System.Drawing.Point(0, 13);
+            this.dataGrid_Ausgabe.Margin = new System.Windows.Forms.Padding(4);
             this.dataGrid_Ausgabe.Name = "dataGrid_Ausgabe";
-            this.dataGrid_Ausgabe.Size = new System.Drawing.Size(1067, 501);
+            this.dataGrid_Ausgabe.Size = new System.Drawing.Size(1067, 545);
             this.dataGrid_Ausgabe.TabIndex = 6;
             // 
             // Form2
@@ -125,7 +125,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.listBoxStationBoard);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
             this.Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_Ausgabe)).EndInit();

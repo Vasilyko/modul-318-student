@@ -46,8 +46,10 @@ namespace SwissTransport
                 Stop.Departure.ToLongTimeString());
         }
     }
-    //Diese methode wird für den Aufruf von der Abfahrtstafel verwendet
-    //so kann ich später diese Elemente einfacher beschreiben und auslesen 
+    /// <summary>
+    /// //Diese methode wird für den Aufruf von der Abfahrtstafel verwendet
+    ///so kann ich später diese Elemente einfacher beschreiben und auslesen 
+    /// </summary>
     public class StationBoardViewModel
     {
         public string DeparturePoint { get; set; }
