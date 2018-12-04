@@ -23,7 +23,7 @@ namespace ÖVApp_KOV
 
         public Form1()
         {
-            System.IO.Stream str = Properties.Resources.ElevatorMusic;
+            System.IO.Stream str = Properties.Resources.merrychristmas;
             System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
             snd.Play();
 
@@ -174,6 +174,13 @@ namespace ÖVApp_KOV
         private void button_Sponoring_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://databerg.rocks/de");
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            System.IO.Stream str = Properties.Resources.merrychristmas;
+            System.Media.SoundPlayer snd = new System.Media.SoundPlayer(str);
+            snd.Stop();
         }
     }
 }

@@ -46,6 +46,7 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button_Help = new System.Windows.Forms.Button();
             this.button_Sponoring = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // comboBox_Abfahrtsort
@@ -218,13 +219,25 @@
             this.button_Sponoring.UseVisualStyleBackColor = false;
             this.button_Sponoring.Click += new System.EventHandler(this.button_Sponoring_Click);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Chocolate;
+            this.button1.Location = new System.Drawing.Point(270, 97);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(93, 21);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Musik anhalten";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AcceptButton = this.btn_Suchen;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(638, 499);
+            this.ClientSize = new System.Drawing.Size(641, 499);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.button_Sponoring);
             this.Controls.Add(this.button_Help);
             this.Controls.Add(this.button_Mail);
@@ -269,6 +282,7 @@
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.Button button_Help;
         private System.Windows.Forms.Button button_Sponoring;
+        private System.Windows.Forms.Button button1;
     }
 }
 

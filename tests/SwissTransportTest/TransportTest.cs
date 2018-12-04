@@ -48,7 +48,7 @@ namespace SwissTransport
         [TestMethod]
         public void GetBoard()
         {
-            var testee = new Form2();
+            var testee = new Vasily_Abfahrtstafel();
 
             Assert.IsNotNull(testee);
         }
